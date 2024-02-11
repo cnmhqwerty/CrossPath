@@ -9,9 +9,9 @@
     <TabBar>
 
         <ShellContent
-            Title="Home"
-            ContentTemplate="{DataTemplate local:MainPage}"
-            Route="MainPage" />
+            Title="Note"
+            ContentTemplate="{DataTemplate local:NotePage}"
+            Icon="{OnPlatform 'icon_notes.png', iOS='icon_notes_ios.png', MacCatalyst='icon_notes_ios.png'}"/>
     
         <ShellContent
             Title="About"
