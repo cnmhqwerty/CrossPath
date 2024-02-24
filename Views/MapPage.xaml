@@ -1,8 +1,25 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:maps="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:maps="clr-namespace:Microsoft.Maui.Controls.Maps;assembly=Microsoft.Maui.Controls.Maps"
+             xmlns:sensors="clr-namespace:Microsoft.Maui.Devices.Sensors;assembly=Microsoft.Maui.Essentials"
              x:Class="CrossPath.Views.MapPage"
              Title="MapPage">
-    <maps:Map x:Name="map" MapType="Street"/>
+
+    <maps:Map x:Name="map" IsShowingUser="true">
+        <maps:Map.Pins>
+            <maps:Pin Label="Santa Cruz"
+                      Address="The city with a boardwalk"
+                      Type="Place">
+                <maps:Pin.Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>36.9628066</x:Double>
+                            <x:Double>-122.0194722</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                </maps:Pin.Location>
+            </maps:Pin>
+        </maps:Map.Pins>
+    </maps:Map>
 </ContentPage>
