@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="CrossPath.Views.MainPage">
-</ContentPage>
+<TabbedPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            x:Class="CrossPath.Views.MainPage"
+            xmlns:local="clr-namespace:CrossPath.Views">
+
+    <local:ProfilePage Title="Profile"
+                IconImageSource="{OnPlatform 'icon_profile.svg'}">
+    </local:ProfilePage>
+
+    <local:MapPage Title="Live Map"
+                IconImageSource="{OnPlatform 'icon_map.svg'}">
+    </local:MapPage>
+
+    <local:NFCPage Title="NFC"
+                IconImageSource="{OnPlatform 'icon_nfc.svg'}">
+    </local:NFCPage>
+
+    <local:QRGenPage Title="QR Code"
+                IconImageSource="{OnPlatform 'icon_qr.svg'}">
+    </local:QRGenPage>
+
+</TabbedPage>

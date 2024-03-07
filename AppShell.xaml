@@ -6,18 +6,13 @@
     xmlns:views="clr-namespace:CrossPath.Views"
     Shell.FlyoutBehavior="Flyout">
 
-    <Tab Title="Live Map"
-        Icon="{OnPlatform 'icon_map.svg'}">
-            <ShellContent ContentTemplate="{DataTemplate views:MapPage}"/>
+    <Tab>
+        <ShellContent ContentTemplate="{DataTemplate views:MainPage}"/>
+    </Tab>
+
+    <FlyoutItem Title="Profile">
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate views:ProfilePage}" />
         </Tab>
-
-    <Tab Title="NFC"
-        Icon="{OnPlatform 'icon_nfc.svg'}">
-            <ShellContent ContentTemplate="{DataTemplate views:NFCPage}"/>
-    </Tab>
-
-    <Tab Title="QR Code"
-        Icon="{OnPlatform 'icon_qr.svg'}">
-        <ShellContent ContentTemplate="{DataTemplate views:QRGenPage}"/>
-    </Tab>
+    </FlyoutItem>
 </Shell>

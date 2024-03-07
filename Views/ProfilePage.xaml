@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CrossPath.Views.ProfilePage"
+             Title="ProfilePage"
+             xmlns:local="clr-namespace:CrossPath.ViewModels">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="icon_account.svg" />
+    </ContentPage.ToolbarItems>
+    <VerticalStackLayout Padding="10">
+        <HorizontalStackLayout>
+            <Label Text="Profile Name" VerticalOptions="Center" HorizontalOptions="Start"/>
+            <Image Source="profile_picture.svg"/>
+        </HorizontalStackLayout>
+        <Label 
+            Text="Interests"
+            VerticalOptions="Center" 
+            HorizontalOptions="Start" />
+        <Frame BackgroundColor="Aquamarine" BorderColor="Black" CornerRadius="25">
+        <ScrollView VerticalOptions="Center">
+            <VerticalStackLayout>
+                <ListView ItemsSource="{x:Static local:Profile.All}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Label Text="{Binding FriendlyName}" />
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </VerticalStackLayout>
+            </ScrollView>
+        </Frame>
+    </VerticalStackLayout>
+</ContentPage>
