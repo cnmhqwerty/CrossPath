@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace CrossPath.ViewModels
 {
-    class MapLocation
+    class UserInfo : IProfile
     {
-        
+        public Location location { get ; set; } = new Location();
+        public string username { get; set; } = "test";
     }
 }

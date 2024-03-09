@@ -1,11 +1,14 @@
 using CrossPath.ViewModels;
+using Microsoft.Maui.Controls;
 
 namespace CrossPath.Views;
 
 public partial class ProfilePage : ContentPage
 {
-	public ProfilePage()
+    IProfile Data = DependencyService.Get<IProfile>();
+    public ProfilePage()
 	{
-		InitializeComponent();
+        InitializeComponent();
+
     }
 }

@@ -10,21 +10,20 @@
     </ContentPage.ToolbarItems>
     <VerticalStackLayout Padding="10">
         <HorizontalStackLayout>
-            <Label Text="Profile Name" VerticalOptions="Center" HorizontalOptions="Start"/>
+            <Entry Text="Value" VerticalOptions="Center" HorizontalOptions="Start"/>
             <Image Source="profile_picture.svg"/>
         </HorizontalStackLayout>
         <Label 
             Text="Interests"
             VerticalOptions="Center" 
-            HorizontalOptions="Start" />
+            HorizontalOptions="Start"/>
         <Frame BackgroundColor="Aquamarine" BorderColor="Black" CornerRadius="25">
         <ScrollView VerticalOptions="Center">
             <VerticalStackLayout>
-                <ListView ItemsSource="{x:Static local:Profile.All}">
+                <ListView>
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-                                <Label Text="{Binding FriendlyName}" />
                             </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>

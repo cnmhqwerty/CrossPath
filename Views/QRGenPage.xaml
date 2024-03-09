@@ -7,9 +7,29 @@
         <ToolbarItem IconImageSource="icon_qrscan.svg" />
     </ContentPage.ToolbarItems>
     <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        <ScrollView>
+            <VerticalStackLayout
+            Spacing="10"
+            Padding="30"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="Center">
+
+                <Button
+                x:Name="GenerateBtn"
+                Text="Refresh QR Code"
+                SemanticProperties.Hint="Generate the QR code when you click"
+                Clicked="OnGenerateClicked"
+                HorizontalOptions="FillAndExpand" />
+                <Frame BorderColor="LightSlateGray"
+                   BackgroundColor="White"
+                   Padding="10">
+                    <Image
+                x:Name="QrCodeImage"
+                HeightRequest="200"
+                WidthRequest="200"/>
+                </Frame>
+            </VerticalStackLayout>
+        </ScrollView>
+
     </VerticalStackLayout>
 </ContentPage>

@@ -60,6 +60,8 @@
 		<PackageReference Include="Microsoft.Maui.Controls.Maps" Version="7.0.101" />
 		<PackageReference Include="Microsoft.Maui.Maps" Version="7.0.101" />
 		<PackageReference Include="Plugin.BLE" Version="3.0.0" />
+		<PackageReference Include="QRCoder" Version="1.4.3" />
+		<PackageReference Include="QRCoder.Xaml" Version="1.4.3" />
 	</ItemGroup>
 
 	<ItemGroup>

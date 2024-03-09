@@ -4,17 +4,21 @@ using System.Diagnostics;
 using Microsoft.Maui.Maps;
 using GeolocatorPlugin.Abstractions;
 using GeolocatorPlugin;
+using CrossPath.ViewModels;
 
 namespace CrossPath.Views;
 
 public partial class MapPage : ContentPage
 {
-	public MapPage()
-	{
-		InitializeComponent();
+
+    IProfile Data = DependencyService.Get<IProfile>();
+    public MapPage()
+    {
+        InitializeComponent();
+
         Position pos = GetCurrentPosition().Result;
-        Location location = new Location(pos.Latitude, pos.Longitude);
-        MapSpan mapSpan = new MapSpan(location, 0.1, 0.1);
+        Data.location = new Location(pos.Latitude, pos.Longitude);
+        MapSpan mapSpan = new MapSpan(Data.location, 0.1, 0.1);
 
         Map map = new Map
         {
@@ -33,7 +37,6 @@ public partial class MapPage : ContentPage
         };
         map.Pins.Add(pin);
     }
-
     public static async Task<Position> GetCurrentPosition()
     {
         Position position = null;
