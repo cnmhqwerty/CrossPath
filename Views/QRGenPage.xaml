@@ -4,7 +4,7 @@
              x:Class="CrossPath.Views.QRGenPage"
              Title="QRGenPage">
     <ContentPage.ToolbarItems>
-        <ToolbarItem IconImageSource="icon_qrscan.svg" />
+        <ToolbarItem IconImageSource="icon_qrscan.svg" Clicked="OnScanClicked"/>
     </ContentPage.ToolbarItems>
     <VerticalStackLayout>
         <ScrollView>
