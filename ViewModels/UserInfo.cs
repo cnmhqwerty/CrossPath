@@ -12,7 +12,7 @@ namespace CrossPath.ViewModels
     class UserInfo : IProfile
     {
         public Location location { get; set; } = new Location();
-        public string username { get; set; } = "test";
+        public string username { get; set; }
 
     }
 }

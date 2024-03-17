@@ -16,6 +16,7 @@ namespace CrossPath.ViewModels
 
         public Location location { get; set; }
 
+
         public async Task<Position> GetCurrentPosition()
         {
             Position position = null;

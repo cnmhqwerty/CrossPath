@@ -10,7 +10,7 @@
     </ContentPage.ToolbarItems>
     <VerticalStackLayout Padding="10">
         <HorizontalStackLayout>
-            <Entry Text="Value" VerticalOptions="Center" HorizontalOptions="Start"/>
+            <Entry Completed="OnEntryComplete" Placeholder="Username here" VerticalOptions="Center" HorizontalOptions="Start"/>
             <Image Source="profile_picture.svg"/>
         </HorizontalStackLayout>
         <Label 

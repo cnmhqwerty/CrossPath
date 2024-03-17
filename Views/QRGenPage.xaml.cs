@@ -18,10 +18,10 @@ public partial class QRGenPage : ContentPage
     }
 
     private void GenQR()
-    {
+    {        
         Position pos = Data.GetCurrentPosition().Result;
         Data.location = new Location(pos.Latitude, pos.Longitude);
-        String QRText = string.Format("{0}, {1}", pos.Latitude, pos.Longitude);
+        String QRText = string.Format("{0}, {1}, {2}", Data.username, pos.Latitude, pos.Longitude);
 
         QRCodeGenerator qrGenerator = new QRCodeGenerator();
         QRCodeData qrCodeData = qrGenerator.CreateQrCode(QRText, QRCodeGenerator.ECCLevel.L);
