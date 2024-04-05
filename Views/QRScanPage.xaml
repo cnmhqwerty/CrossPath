@@ -4,8 +4,12 @@
              xmlns:cv="clr-namespace:Camera.MAUI;assembly=Camera.MAUI"
              x:Class="CrossPath.Views.QRScanPage"
              Title="QRScanPlaylist">
+    
     <VerticalStackLayout Spacing="25" Padding="30,0" VerticalOptions="Fill" HorizontalOptions="Fill">
         <cv:CameraView x:Name="cameraView" WidthRequest="300" HeightRequest="300"
-                       CamerasLoaded="CameraView_CamerasLoaded"/>
+                       CamerasLoaded="CameraView_CamerasLoaded" BarCodeDetectionEnabled="True"
+                       BarcodeDetected="cameraView_BarcodeDetected"/>
+        <Label x:Name="barcodeResult" FontSize="20"/>
     </VerticalStackLayout>
+    
 </ContentPage>

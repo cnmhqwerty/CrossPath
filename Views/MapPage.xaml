@@ -7,19 +7,5 @@
              Title="MapPage">
 
     <maps:Map x:Name="map" IsShowingUser="true">
-        <maps:Map.Pins>
-            <maps:Pin Label="Santa Cruz"
-                      Address="The city with a boardwalk"
-                      Type="Place">
-                <maps:Pin.Location>
-                    <sensors:Location>
-                        <x:Arguments>
-                            <x:Double>36.9628066</x:Double>
-                            <x:Double>-122.0194722</x:Double>
-                        </x:Arguments>
-                    </sensors:Location>
-                </maps:Pin.Location>
-            </maps:Pin>
-        </maps:Map.Pins>
     </maps:Map>
 </ContentPage>
