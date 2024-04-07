@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using Microsoft.Maui.Controls.Maps;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Collections.ObjectModel;
 
 namespace CrossPath.ViewModels
 {
@@ -19,7 +20,7 @@ namespace CrossPath.ViewModels
 
         public Location location { get; set; }
 
-        public IList<Pin> pins { get; set; } 
+        public ObservableCollection<Pin> mapPins { get; set; }
 
         public async Task<Position> GetCurrentPosition()
         {

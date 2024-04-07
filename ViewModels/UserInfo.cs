@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Maui.Controls.Maps;
+using System.Collections.ObjectModel;
 
 namespace CrossPath.ViewModels
 {
@@ -15,6 +16,7 @@ namespace CrossPath.ViewModels
 
         public Location location { get; set; } = new Location();
         public string username { get; set; }
-        public IList<Pin> pins { get; set; }
+        public ObservableCollection<Pin> mapPins { get; set; } = new ObservableCollection<Pin>();
+
     }
 }
