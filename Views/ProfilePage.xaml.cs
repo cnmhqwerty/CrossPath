@@ -14,6 +14,6 @@ public partial class ProfilePage : ContentPage
 
     void OnEntryComplete(object sender, EventArgs e)
     {
-        Data.username = ((Entry)sender).Text;
+        Data.Username = ((Entry)sender).Text;
     }
 }

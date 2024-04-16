@@ -6,7 +6,7 @@ namespace CrossPath.Views;
 
 public partial class QRGenPage : ContentPage
 {
-    IProfile Data = DependencyService.Get<IProfile>();
+    readonly IProfile Data = DependencyService.Get<IProfile>();
     public QRGenPage()
 	{
 		InitializeComponent();
@@ -20,12 +20,12 @@ public partial class QRGenPage : ContentPage
     private void GenQR()
     {        
         Position pos = Data.GetCurrentPosition().Result;
-        Data.location = new Location(pos.Latitude, pos.Longitude);
-        String QRText = string.Format("{0}, {1}, {2}", Data.username, pos.Latitude, pos.Longitude);
+        Data.Location = new Location(pos.Latitude, pos.Longitude);
+        String QRText = string.Format("{0}, {1}, {2}", Data.Username, pos.Latitude, pos.Longitude);
 
-        QRCodeGenerator qrGenerator = new QRCodeGenerator();
+        QRCodeGenerator qrGenerator = new();
         QRCodeData qrCodeData = qrGenerator.CreateQrCode(QRText, QRCodeGenerator.ECCLevel.L);
-        PngByteQRCode qRCode = new PngByteQRCode(qrCodeData);
+        PngByteQRCode qRCode = new(qrCodeData);
         byte[] qrCodeBytes = qRCode.GetGraphic(20);
         QrCodeImage.Source = ImageSource.FromStream(() => new MemoryStream(qrCodeBytes));
     }

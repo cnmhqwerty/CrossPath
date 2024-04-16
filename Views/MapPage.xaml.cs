@@ -16,11 +16,11 @@ public partial class MapPage : ContentPage
     {
         InitializeComponent();
 
-        Data.mapPins.CollectionChanged += HandleChange;
+        Data.MapPins.CollectionChanged += HandleChange;
 
         Position pos = Data.GetCurrentPosition().Result;
-        Data.location = new Location(pos.Latitude, pos.Longitude);
-        MapSpan mapSpan = new MapSpan(Data.location, 0.1, 0.1);
+        Data.Location = new Location(pos.Latitude, pos.Longitude);
+        MapSpan mapSpan = new MapSpan(Data.Location, 0.1, 0.1);
 
         if (map != null)
         {

@@ -39,7 +39,7 @@ public partial class QRScanPage : ContentPage
                 Type = PinType.Place,
                 Location = new Location(Convert.ToDouble(args.Result[0].Text.Split(",", StringSplitOptions.TrimEntries)[1]), Convert.ToDouble(args.Result[0].Text.Split(",", StringSplitOptions.TrimEntries)[2]))
             };
-            Data.mapPins.Add(pin);
+            Data.MapPins.Add(pin);
         });
     }
 }

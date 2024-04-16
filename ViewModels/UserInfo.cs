@@ -14,9 +14,9 @@ namespace CrossPath.ViewModels
     class UserInfo : IProfile
     {
 
-        public Location location { get; set; } = new Location();
-        public string username { get; set; }
-        public ObservableCollection<Pin> mapPins { get; set; } = new ObservableCollection<Pin>();
+        public Location Location { get; set; } = new Location();
+        public string Username { get; set; }
+        public ObservableCollection<Pin> MapPins { get; set; } = new ObservableCollection<Pin>();
 
     }
 }

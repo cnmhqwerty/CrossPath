@@ -16,11 +16,11 @@ namespace CrossPath.ViewModels
 {
     public interface IProfile
     {
-        public string username { get; set; }
+        public string Username { get; set; }
 
-        public Location location { get; set; }
+        public Location Location { get; set; }
 
-        public ObservableCollection<Pin> mapPins { get; set; }
+        public ObservableCollection<Pin> MapPins { get; set; }
 
         public async Task<Position> GetCurrentPosition()
         {
