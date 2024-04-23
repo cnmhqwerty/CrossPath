@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:CrossPath.ViewModels">
 
     <VerticalStackLayout Padding="5">
-        <ImageButton x:Name="pfpImage" Source="profile_picture.svg" Clicked="OnPfPClicked"/>
+        <ImageButton x:Name="pfpImage" Source="profile_picture.svg" Clicked="OnPfPClicked" WidthRequest="256" HeightRequest="256"/>
         <Entry Completed="OnEntryComplete" Placeholder="Username here" VerticalOptions="Center" HorizontalOptions="CenterAndExpand"/>
         <Label 
             Text="Interests"
