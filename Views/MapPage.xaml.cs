@@ -36,4 +36,8 @@ public partial class MapPage : ContentPage
             Debug.WriteLine(x.Location);
         }
     }
+    async void OnConnectionsClicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new ConnectionsPage(), true);
+    }
 }

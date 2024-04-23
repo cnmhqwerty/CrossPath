@@ -4,6 +4,11 @@
              xmlns:maps="clr-namespace:Microsoft.Maui.Controls.Maps;assembly=Microsoft.Maui.Controls.Maps"
              xmlns:sensors="clr-namespace:Microsoft.Maui.Devices.Sensors;assembly=Microsoft.Maui.Essentials"
              x:Class="CrossPath.Views.MapPage"
-             Title="MapPage">
+             Title="Live Map">
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="icon_account.svg" Clicked="OnConnectionsClicked"/>
+    </ContentPage.ToolbarItems>
+    
     <maps:Map x:Name="map" IsShowingUser="true"/>
 </ContentPage>

@@ -31,11 +31,10 @@ public partial class QRScanPage : ContentPage
     {
 		MainThread.BeginInvokeOnMainThread(() =>
 		{ //breakdown data from barcode convert into map pin using .split and delimiters
-			barcodeResult.Text = $"{args.Result[0].Text.Split(",", StringSplitOptions.TrimEntries)[0]}";
             Pin pin = new Pin
             {
                 Label = args.Result[0].Text.Split(",", StringSplitOptions.TrimEntries)[0],
-                Address = "Test Location",
+                Address = Convert.ToString(args.Result[0].Text.Split(",", StringSplitOptions.TrimEntries)[0]),
                 Type = PinType.Place,
                 Location = new Location(Convert.ToDouble(args.Result[0].Text.Split(",", StringSplitOptions.TrimEntries)[1]), Convert.ToDouble(args.Result[0].Text.Split(",", StringSplitOptions.TrimEntries)[2]))
             };

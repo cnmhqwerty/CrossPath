@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="CrossPath.Views.ProfilePage"
-             Title="Profile"
+             x:Class="CrossPath.Views.ConnectionsPage"
+             Title="Stored Connections"
              xmlns:local="clr-namespace:CrossPath.ViewModels">
 
     <VerticalStackLayout Padding="5">
-        <ImageButton x:Name="pfpImage" Source="profile_picture.svg" Clicked="OnPfPClicked"/>
-        <Entry Completed="OnEntryComplete" Placeholder="Username here" VerticalOptions="Center" HorizontalOptions="CenterAndExpand"/>
         <Label 
             Text="Interests"
             VerticalOptions="Center" 
@@ -16,13 +14,13 @@
         <ScrollView VerticalOptions="Center">
             <VerticalStackLayout>
                 <ListView>
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate> 
-                </ListView>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
             </VerticalStackLayout>
             </ScrollView>
         </Frame>

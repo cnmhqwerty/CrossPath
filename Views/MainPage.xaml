@@ -6,19 +6,15 @@
             xmlns:local="clr-namespace:CrossPath.Views"
             android:TabbedPage.IsSwipePagingEnabled="false">
 
-    <local:ProfilePage Title="Profile"
+    <local:ProfilePage Title="My Profile"
                 IconImageSource="{OnPlatform 'icon_profile.svg'}">
     </local:ProfilePage>
 
-    <local:MapPage Title="Live Map"
+    <local:MapPage Title="Connections"
                 IconImageSource="{OnPlatform 'icon_map.svg'}">
     </local:MapPage>
 
-    <local:NFCPage Title="NFC"
-                IconImageSource="{OnPlatform 'icon_nfc.svg'}">
-    </local:NFCPage>
-
-    <local:QRGenPage Title="QR Code"
+    <local:QRGenPage Title="Local Share"
                 IconImageSource="{OnPlatform 'icon_qr.svg'}">
     </local:QRGenPage>
 

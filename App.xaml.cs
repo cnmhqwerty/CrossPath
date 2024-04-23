@@ -1,6 +1,5 @@
 ﻿using CrossPath.ViewModels;
 using System.Reflection;
-using static Android.Graphics.ImageDecoder;
 
 namespace CrossPath
 {
