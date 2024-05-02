@@ -21,8 +21,19 @@ namespace CrossPath.ViewModels
         public Location Location { get; set; }
 
         public ObservableCollection<Pin> MapPins { get; set; }
+        public class Interest
+        {
+            public Interest(string name, bool isChecked)
+            {
+                this.Name = name;
+                this.IsChecked = isChecked;
+            }
+            public string Name { get; set; }
+            public bool IsChecked { get; set; }
+        };
+        public ObservableCollection<Interest> InterestsCollection { get; set;}
 
-        public async Task<Position> GetCurrentPosition()
+    public async Task<Position> GetCurrentPosition()
         {
             Position position = null;
             try

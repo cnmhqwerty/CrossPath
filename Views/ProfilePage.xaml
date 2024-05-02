@@ -3,8 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CrossPath.Views.ProfilePage"
              Title="Profile"
-             xmlns:local="clr-namespace:CrossPath.ViewModels"
-             BindingContext="{Binding }">
+             xmlns:local="clr-namespace:CrossPath.ViewModels">
     <VerticalStackLayout Padding="5" >
         <ImageButton x:Name="pfpImage" Source="profile_picture.svg" Clicked="OnPfPClicked" WidthRequest="256" HeightRequest="256"/>
         <Entry Completed="OnEntryComplete" Placeholder="Username here" VerticalOptions="Center" HorizontalOptions="CenterAndExpand"/>
@@ -14,53 +13,17 @@
             HorizontalOptions="Start"/>
         <Frame CornerRadius="25">
             <ListView x:Name="InterestList" SelectionMode="None">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                                <HorizontalStackLayout>
-                                    <Label Text="{Binding Name}" FontAttributes="Bold" FontSize="Large" VerticalTextAlignment="Center" VerticalOptions="Center"/>
-                                    <CheckBox x:Name="{Binding Name}" CheckedChanged="OnCheckBoxCheckedChanged" VerticalOptions="Center" IsChecked="{Binding IsChecked}"/>
-                                </HorizontalStackLayout>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <HorizontalStackLayout>
+                                <Label Text="{Binding Name}" FontAttributes="Bold" FontSize="Large" VerticalTextAlignment="Center" VerticalOptions="Center"/>
+                                <CheckBox x:Name="{Binding Name}" CheckedChanged="OnCheckBoxCheckedChanged" VerticalOptions="Center" IsChecked="{Binding IsChecked}"/>
+                            </HorizontalStackLayout>
                         </ViewCell>
                     </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-                
-                
-                
-                <!--<VerticalStackLayout>
-                    <HorizontalStackLayout>
-                        <Label Text="Books" VerticalTextAlignment="Center" VerticalOptions="Center"/>
-                        <CheckBox x:Name="Books" CheckedChanged="OnCheckBoxCheckedChanged" VerticalOptions="Center"/>
-                        <Line />
-                    </HorizontalStackLayout>
-
-                    <HorizontalStackLayout>
-                        <Label Text="Video Games" VerticalTextAlignment="Center" VerticalOptions="Center"/>
-                        <CheckBox x:Name="VideoGames" CheckedChanged="OnCheckBoxCheckedChanged" VerticalOptions="Center"/>
-                    </HorizontalStackLayout>
-
-                    <HorizontalStackLayout>
-                        <Label Text="Animals" VerticalTextAlignment="Center" VerticalOptions="Center"/>
-                        <CheckBox x:Name="Animals" CheckedChanged="OnCheckBoxCheckedChanged" VerticalOptions="Center"/>
-                    </HorizontalStackLayout>
-
-                    <HorizontalStackLayout>
-                        <Label Text="Music" VerticalTextAlignment="Center" VerticalOptions="Center"/>
-                        <CheckBox x:Name="Music" CheckedChanged="OnCheckBoxCheckedChanged" VerticalOptions="Center"/>
-                    </HorizontalStackLayout>
-
-                    <HorizontalStackLayout>
-                        <Label Text="Anime" VerticalTextAlignment="Center" VerticalOptions="Center"/>
-                        <CheckBox x:Name="Anime" CheckedChanged="OnCheckBoxCheckedChanged" VerticalOptions="Center"/>
-                    </HorizontalStackLayout>
-
-                    <HorizontalStackLayout>
-                        <Label Text="Movies" VerticalTextAlignment="Center" VerticalOptions="Center"/>
-                        <CheckBox x:Name="Movies" CheckedChanged="OnCheckBoxCheckedChanged" VerticalOptions="Center"/>
-                    </HorizontalStackLayout>
-                    
-                </VerticalStackLayout>-->
+                </ListView.ItemTemplate>
+            </ListView>
         </Frame>
     </VerticalStackLayout>
 </ContentPage>
