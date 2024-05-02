@@ -4,12 +4,17 @@
              xmlns:cv="clr-namespace:Camera.MAUI;assembly=Camera.MAUI"
              x:Class="CrossPath.Views.QRScanPage"
              Title="QR Code Scanner">
-    
+
     <VerticalStackLayout Spacing="25" Padding="30,0" VerticalOptions="Fill" HorizontalOptions="Fill">
         <cv:CameraView x:Name="cameraView" WidthRequest="300" HeightRequest="300"
                        CamerasLoaded="CameraView_CamerasLoaded" BarCodeDetectionEnabled="True"
                        BarcodeDetected="cameraView_BarcodeDetected"/>
+        
         <Label Text="Scan another user's QR Code to add them to your map!" FontSize="20"/>
+        
+        <Button x:Name="ScanBtn" Text="Scan QR Code"
+                SemanticProperties.Hint="Scans the QR code when you click"
+                Clicked="ScanBtn_Clicked" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"/>
     </VerticalStackLayout>
-    
+
 </ContentPage>

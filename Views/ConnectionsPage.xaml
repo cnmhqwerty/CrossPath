@@ -7,22 +7,22 @@
 
     <VerticalStackLayout Padding="5">
         <Label 
-            Text="Interests"
+            Text="Connections"
             VerticalOptions="Center" 
             HorizontalOptions="Start"/>
         <Frame CornerRadius="25">
-        <ScrollView VerticalOptions="Center">
-            <VerticalStackLayout>
-                <ListView>
-                        <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <ViewCell>
-                                </ViewCell>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>
-            </VerticalStackLayout>
-            </ScrollView>
+            <ListView x:Name="ConnectionsList">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <FlexLayout>
+                                <Label MinimumWidthRequest="200" Text="{Binding Name}" FontAttributes="Bold"/>
+                                <Label MinimumHeightRequest="200" LineBreakMode="WordWrap" Text="{Binding Interests}" FontAttributes="Italic"/>
+                            </FlexLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+             </ListView>
         </Frame>
     </VerticalStackLayout>
 </ContentPage>

@@ -30,8 +30,4 @@ public partial class ProfilePage : ContentPage
             pfpImage.Source = fileStream.Name;
         }
     }
-
-    private void OnCheckBoxCheckedChanged(object sender, EventArgs e)
-    {
-    }
 }

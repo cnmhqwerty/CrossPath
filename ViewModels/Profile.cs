@@ -33,6 +33,20 @@ namespace CrossPath.ViewModels
         };
         public ObservableCollection<Interest> InterestsCollection { get; set;}
 
+        public class Connection
+        {
+            public Connection(string name, string interests)
+            {
+                this.Name=name;
+                this.Interests = interests;
+            }
+            public string Name { get; set; }
+            public string Interests { get; set; }
+        }
+
+        public ObservableCollection<Connection> ConnectionsCollection { get; set;}
+
+
     public async Task<Position> GetCurrentPosition()
         {
             Position position = null;

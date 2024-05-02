@@ -18,7 +18,7 @@
                         <ViewCell>
                             <HorizontalStackLayout>
                                 <Label Text="{Binding Name}" FontAttributes="Bold" FontSize="Large" VerticalTextAlignment="Center" VerticalOptions="Center"/>
-                                <CheckBox x:Name="{Binding Name}" CheckedChanged="OnCheckBoxCheckedChanged" VerticalOptions="Center" IsChecked="{Binding IsChecked}"/>
+                                <CheckBox x:Name="{Binding Name}" VerticalOptions="Center" IsChecked="{Binding IsChecked}"/>
                             </HorizontalStackLayout>
                         </ViewCell>
                     </DataTemplate>
