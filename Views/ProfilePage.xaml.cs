@@ -1,7 +1,5 @@
-using Android.Hardware.Lights;
-using CrossPath.ViewModels; 
-using Microsoft.Maui.Controls.Shapes;
-using static Android.Icu.Text.ListFormatter;
+using CrossPath.ViewModels;
+using System.Collections.ObjectModel;
 using Path = System.IO.Path;
 
 namespace CrossPath.Views;
@@ -9,9 +7,41 @@ namespace CrossPath.Views;
 public partial class ProfilePage : ContentPage
 {
     IProfile Data = DependencyService.Get<IProfile>();
+    public class Interest
+    {
+        public Interest(string name, bool isChecked)
+        {
+            this.Name = name;
+            this.IsChecked = isChecked;
+        }
+        public string Name { get; set; }
+        public bool IsChecked { get; set; }
+    };
+
+
+    private ObservableCollection<Interest> interestsCollection;
+
+    public ObservableCollection<Interest> InterestsCollection
+    {
+        get { return interestsCollection; }
+        set { interestsCollection = value; }
+    }
+
+
     public ProfilePage()
-	{
+    {
         InitializeComponent();
+        InterestsCollection = new()
+        {
+            new Interest("Books", false),
+            new Interest("Games", false),
+            new Interest("Animals", false),
+            new Interest("Music", false),
+            new Interest("Anime", false),
+            new Interest("Movies", false)
+        };
+
+        InterestList.ItemsSource = InterestsCollection;
     }
 
     void OnEntryComplete(object sender, EventArgs e)
@@ -30,5 +60,9 @@ public partial class ProfilePage : ContentPage
             await sourceStream.CopyToAsync(fileStream);
             pfpImage.Source = fileStream.Name;
         }
+    }
+
+    private void OnCheckBoxCheckedChanged(object sender, EventArgs e)
+    {
     }
 }
