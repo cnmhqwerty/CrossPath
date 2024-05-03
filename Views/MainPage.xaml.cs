@@ -9,8 +9,11 @@ public partial class MainPage
     public MainPage()
     {
         InitializeComponent();
-        Debug.WriteLine(Path.Combine(FileSystem.AppDataDirectory, "Connections.txt"));
-        File.AppendText(Path.Combine(FileSystem.AppDataDirectory, "MapPins.txt")).WriteLine("testing 124, 53.4739427, -2.2932821, 101010");
+        File.WriteAllText(Path.Combine(FileSystem.AppDataDirectory, "connections.txt"), "testing 124, 53.4739427, -2.2932821, 101010");
+        using (StreamWriter sw = File.AppendText(Path.Combine(FileSystem.AppDataDirectory, "MapPins.txt")))
+        {
+            sw.WriteLine("testing 124, 53.4739427, -2.2932821, 101010");
+        }
         Data.ReadPinsFile();
         Data.ReadConnectionsFile();
     }
