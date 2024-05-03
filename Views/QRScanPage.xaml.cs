@@ -1,5 +1,6 @@
 using CrossPath.ViewModels;
 using Microsoft.Maui.Controls.Maps;
+using Microsoft.Maui.Controls.PlatformConfiguration;
 
 namespace CrossPath.Views;
 
@@ -47,6 +48,18 @@ public partial class QRScanPage : ContentPage
                     Location = new Location(Convert.ToDouble(args.Result[0].Text.Split(",", StringSplitOptions.TrimEntries)[1]), Convert.ToDouble(args.Result[0].Text.Split(",", StringSplitOptions.TrimEntries)[2]))
                 };
                 Data.MapPins.Add(pin);
+                if (!File.Exists(Path.Combine(FileSystem.AppDataDirectory, "MapPins.txt")))
+                {
+                    // Create a file to write to.
+                    using (StreamWriter sw = File.CreateText(Path.Combine(FileSystem.AppDataDirectory, "MapPins.txt")))
+                    {
+                        sw.WriteLine("{0};", args.Result[0]);
+                    }
+                }
+                else
+                {
+                    File.AppendText(Path.Combine(FileSystem.AppDataDirectory, "MapPins.txt")).WriteLine("{0};", args.Result[0]);
+                }
 
                 //breakdown interests bool into data for display.
                 string interests = "Their Interests: ";
@@ -60,6 +73,20 @@ public partial class QRScanPage : ContentPage
                     }
                 }
                 Data.ConnectionsCollection.Add(new IProfile.Connection(args.Result[0].Text.Split(",", StringSplitOptions.TrimEntries)[0], interests));
+
+
+                if (!File.Exists(Path.Combine(FileSystem.AppDataDirectory, "Connections.txt")))
+                {
+                    // Create a file to write to.
+                    using (StreamWriter sw = File.CreateText(Path.Combine(FileSystem.AppDataDirectory, "Connections.txt")))
+                    {
+                        sw.WriteLine("{0};", args.Result[0]);
+                    }
+                }
+                else
+                {
+                    File.AppendText(Path.Combine(FileSystem.AppDataDirectory, "Connections.txt")).WriteLine("{0},{1};", args.Result[0].Text.Split(",", StringSplitOptions.TrimEntries)[0], tempInterests);
+                }
             });
         }
     }

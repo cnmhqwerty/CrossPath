@@ -1,5 +1,6 @@
 ﻿using Microsoft.Maui.Controls.Maps;
 using System.Collections.ObjectModel;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace CrossPath.ViewModels
 {
@@ -18,5 +19,9 @@ namespace CrossPath.ViewModels
             new IProfile.Interest("Movies", false)
         };
         public ObservableCollection<IProfile.Connection> ConnectionsCollection { get; set; } = new ObservableCollection<IProfile.Connection>();
+
+        
+
+        
     }
 }
