@@ -30,10 +30,17 @@ public partial class MapPage : ContentPage
 
     private void HandleChange(object sender, NotifyCollectionChangedEventArgs e)
     {
-        foreach (Pin x in e.NewItems)
+        if (e.NewItems != null)
         {
-            map.Pins.Add(x);
-            Debug.WriteLine(x.Location);
+            foreach (Pin x in e.NewItems)
+            {
+                map.Pins.Add(x);
+                Debug.WriteLine(x.Location);
+            }
+        }
+        else
+        {
+            map.Pins.Clear();
         }
     }
     async void OnConnectionsClicked(object sender, EventArgs e)

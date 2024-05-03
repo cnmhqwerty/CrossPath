@@ -11,7 +11,7 @@
             VerticalOptions="Center" 
             HorizontalOptions="Start"/>
         <Frame CornerRadius="25">
-            <ListView x:Name="ConnectionsList">
+            <ListView x:Name="ConnectionsList" VerticalScrollBarVisibility="Always">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -24,5 +24,6 @@
                 </ListView.ItemTemplate>
              </ListView>
         </Frame>
+        <Button x:Name="DelBtn" Text="Delete All Connections" Clicked="DelBtn_Clicked"/>
     </VerticalStackLayout>
 </ContentPage>

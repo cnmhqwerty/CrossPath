@@ -49,11 +49,22 @@ public partial class QRScanPage : ContentPage
                 };
                 Data.MapPins.Add(pin);
                 // Create a file to write to.
-                using (StreamWriter sw = File.CreateText(Path.Combine(FileSystem.AppDataDirectory, "MapPins.txt")))
+                if (File.Exists(Path.Combine(FileSystem.AppDataDirectory, "MapPins.txt")))
                 {
-                    sw.WriteLine("{0};", args.Result[0]);
+                    string pinstemp;
+                    pinstemp = File.ReadAllText(Path.Combine(FileSystem.AppDataDirectory, "MapPins.txt"));
+                    using (StreamWriter sw = File.CreateText(Path.Combine(FileSystem.AppDataDirectory, "MapPins.txt")))
+                    {
+                        sw.WriteLine("{0};{1}", pinstemp, args.Result[0]);
+                    }
                 }
-
+                else
+                {
+                    using (StreamWriter sw = File.CreateText(Path.Combine(FileSystem.AppDataDirectory, "MapPins.txt")))
+                    {
+                        sw.WriteLine("{0}", args.Result[0]);
+                    }
+                }
                 //breakdown interests bool into data for display.
                 string interests = "Their Interests: ";
                 string tempInterests = args.Result[0].Text.Split(",", StringSplitOptions.TrimEntries)[3];
@@ -67,10 +78,22 @@ public partial class QRScanPage : ContentPage
                 }
                 Data.ConnectionsCollection.Add(new IProfile.Connection(args.Result[0].Text.Split(",", StringSplitOptions.TrimEntries)[0], interests));
 
-
-                using (StreamWriter sw = File.AppendText(Path.Combine(FileSystem.AppDataDirectory, "Connections.txt")))
+                
+                if (File.Exists(Path.Combine(FileSystem.AppDataDirectory, "Connections.txt")))
                 {
-                    sw.WriteLine("{0},{1};", args.Result[0].Text.Split(",", StringSplitOptions.TrimEntries)[0], tempInterests);
+                    string maptemp;
+                    maptemp = File.ReadAllText(Path.Combine(FileSystem.AppDataDirectory, "Connections.txt"));
+                    using (StreamWriter sw = File.CreateText(Path.Combine(FileSystem.AppDataDirectory, "Connections.txt")))
+                    {
+                        sw.WriteLine("{0};{1},{2}", maptemp, args.Result[0].Text.Split(",", StringSplitOptions.TrimEntries)[0], tempInterests);
+                    }
+                }
+                else
+                {
+                    using (StreamWriter sw = File.CreateText(Path.Combine(FileSystem.AppDataDirectory, "Connections.txt")))
+                    {
+                        sw.WriteLine("{0},{1}", args.Result[0].Text.Split(",", StringSplitOptions.TrimEntries)[0], tempInterests);
+                    }
                 }
             });
         }

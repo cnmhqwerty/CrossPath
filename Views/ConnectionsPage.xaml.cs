@@ -11,4 +11,12 @@ public partial class ConnectionsPage : ContentPage
         InitializeComponent();
         ConnectionsList.ItemsSource = Data.ConnectionsCollection;
     }
+
+    private void DelBtn_Clicked(object sender, EventArgs e)
+    {
+        File.Delete(Path.Combine(FileSystem.AppDataDirectory, "Connections.txt"));
+        File.Delete(Path.Combine(FileSystem.AppDataDirectory, "MapPins.txt"));
+        Data.ConnectionsCollection.Clear();
+        Data.MapPins.Clear();
+    }
 }

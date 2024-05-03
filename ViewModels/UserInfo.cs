@@ -19,9 +19,5 @@ namespace CrossPath.ViewModels
             new IProfile.Interest("Movies", false)
         };
         public ObservableCollection<IProfile.Connection> ConnectionsCollection { get; set; } = new ObservableCollection<IProfile.Connection>();
-
-        
-
-        
     }
 }

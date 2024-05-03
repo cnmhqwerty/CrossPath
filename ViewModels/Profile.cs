@@ -116,7 +116,7 @@ namespace CrossPath.ViewModels
 
         public void ReadConnectionsFile()
         {
-            string _fileName = Path.Combine(FileSystem.AppDataDirectory, "connections.txt");
+            string _fileName = Path.Combine(FileSystem.AppDataDirectory, "Connections.txt");
             if (File.Exists(_fileName))
             {
                 //separate file data into each connection
@@ -127,7 +127,7 @@ namespace CrossPath.ViewModels
                 //add these connections to the collection
                 for (int i = 0; i < fileStrings.Length; i++)
                 {
-                    string tempInterests = fileStrings[0].Split(",", StringSplitOptions.TrimEntries)[3];
+                    string tempInterests = fileStrings[0].Split(",", StringSplitOptions.TrimEntries)[1];
                     char[] iter = tempInterests.ToCharArray();
                     for (int t = 0; t < iter.Length; t++)
                     {
