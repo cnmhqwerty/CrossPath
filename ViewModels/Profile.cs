@@ -114,6 +114,19 @@ namespace CrossPath.ViewModels
             }
         }
 
+        public void ReadNameFile()
+        {
+            string _fileName = Path.Combine(FileSystem.AppDataDirectory, "Username.txt");
+            Debug.WriteLine(File.ReadAllText(_fileName));
+            Debug.WriteLine(File.ReadAllText(Path.Combine(FileSystem.AppDataDirectory, "Username.txt")));
+            if (File.Exists(_fileName))
+            {
+                string temp;
+                temp = File.ReadAllText(_fileName);
+                Username = temp;
+            }
+        }
+
         public void ReadConnectionsFile()
         {
             string _fileName = Path.Combine(FileSystem.AppDataDirectory, "Connections.txt");
