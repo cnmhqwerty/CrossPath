@@ -5,8 +5,10 @@
              Title="Profile"
              xmlns:local="clr-namespace:CrossPath.ViewModels">
     <VerticalStackLayout Padding="5" >
-        <ImageButton x:Name="pfpImage" Source="profile_picture.svg" Clicked="OnPfPClicked" WidthRequest="256" HeightRequest="256"/>
-        <Entry x:Name="UsernameEntry" Completed="OnEntryComplete" VerticalOptions="Center" HorizontalOptions="CenterAndExpand"/>
+        <ImageButton x:Name="pfpImage" Source="profile_picture.svg" Clicked="OnPfPClicked" WidthRequest="256" HeightRequest="256" SemanticProperties.Description="Profile Picture"/>
+        <!--<Label x:Name="UsernameLabel" FontAttributes="Bold" FontSize="Large" VerticalTextAlignment="Center" VerticalOptions="Center" SemanticProperties.Description="Username"/>
+        <Button x:Name="UsernameBtn" Text="Edit Username" Clicked="UsernameBtn_Clicked" SemanticProperties.Description="Edit Username Button"/>-->
+        <Entry x:Name="UsernameEntry" FontSize="Large" Completed="OnEntryComplete" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" IsVisible="true" SemanticProperties.Description="New Username text entry"/>
         <Label
             Text="Interests"
             VerticalOptions="Center" 
@@ -18,12 +20,13 @@
                         <ViewCell>
                             <HorizontalStackLayout>
                                 <Label Text="{Binding Name}" FontAttributes="Bold" FontSize="Large" VerticalTextAlignment="Center" VerticalOptions="Center"/>
-                                <CheckBox x:Name="{Binding Name}" VerticalOptions="Center" IsChecked="{Binding IsChecked}"/>
+                                <CheckBox x:Name="{Binding Name}" VerticalOptions="Center" IsChecked="{Binding IsChecked}" SemanticProperties.Description="Interest Checkbox"/>
                             </HorizontalStackLayout>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
         </Frame>
+        <Button x:Name="SaveBtn" Text="Save Selections" Clicked="OnEntryComplete" SemanticProperties.Description="Save Interests Button"/>
     </VerticalStackLayout>
 </ContentPage>

@@ -114,16 +114,28 @@ namespace CrossPath.ViewModels
             }
         }
 
-        public void ReadNameFile()
+        public string ReadProfileFile()
         {
             string _fileName = Path.Combine(FileSystem.AppDataDirectory, "Username.txt");
-            Debug.WriteLine(File.ReadAllText(_fileName));
-            Debug.WriteLine(File.ReadAllText(Path.Combine(FileSystem.AppDataDirectory, "Username.txt")));
             if (File.Exists(_fileName))
             {
-                string temp;
-                temp = File.ReadAllText(_fileName);
-                Username = temp;
+                string[] temp;
+                temp = File.ReadAllText(_fileName).Split(";", StringSplitOptions.RemoveEmptyEntries);
+                Username = temp[0];
+
+                char[] tempInterests = temp[1].ToCharArray();
+                for (int i = 0; i < tempInterests.Length; i++)
+                {
+                    if (tempInterests[i] == '1')
+                    {
+                        InterestsCollection[i].IsChecked = true;
+                    }
+                }
+                return temp[2];
+            }
+            else
+            {
+                return null;
             }
         }
 
