@@ -3,13 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CrossPath.Resources.Styles.DarkThemeColours">
 
-    <Color x:Key="PageBackgroundColor">#0a122a</Color>
-    <Color x:Key="NavigationBarColor">#003e12</Color>
-    <Color x:Key="PrimaryColor">#c6dfff</Color>
-    <Color x:Key="SecondaryColor">#ffd3cd</Color>
-    <Color x:Key="PrimaryTextColor">#ffd3cd</Color>
-    <Color x:Key="SecondaryTextColor">#c6dfff</Color>
-    <Color x:Key="TertiaryTextColor">#a96e64</Color>
-    <Color x:Key="TertiaryColor">#8f3513</Color>
+    <Color x:Key="PageBackgroundColor">#121212</Color>
+    <Color x:Key="NavigationBarColor">#1f1f1f</Color>
+    <Color x:Key="PrimaryColor">#939393</Color>
+    <Color x:Key="SecondaryColor">#bb86fc</Color>
+    <Color x:Key="PrimaryTextColor">#6c5494</Color>
+    <Color x:Key="SecondaryTextColor">#e1e1e1</Color>
+    <Color x:Key="TertiaryTextColor">#9c9c9c</Color>
+    <Color x:Key="TertiaryColor">#bb86fc</Color>
     <Color x:Key="TransparentColor">Transparent</Color>
 </ResourceDictionary>

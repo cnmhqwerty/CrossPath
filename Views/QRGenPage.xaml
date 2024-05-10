@@ -4,7 +4,7 @@
              x:Class="CrossPath.Views.QRGenPage"
              Title="Sharable QR Code">
     <ContentPage.ToolbarItems>
-        <ToolbarItem IconImageSource="icon_qrscan.svg" Clicked="OnScanClicked"/>
+        <ToolbarItem IconImageSource="{AppThemeBinding Light='dark_icon_qrscan.svg', Dark='light_icon_qrscan.svg'}" Clicked="OnScanClicked"/>
     </ContentPage.ToolbarItems>
     <VerticalStackLayout>
         <ScrollView>
@@ -13,7 +13,6 @@
             Padding="30"
             HorizontalOptions="FillAndExpand"
             VerticalOptions="Center">
-
                 <Button
                 x:Name="GenerateBtn"
                 Text="Refresh QR Code"

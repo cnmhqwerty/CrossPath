@@ -7,15 +7,15 @@
             android:TabbedPage.IsSwipePagingEnabled="false">
 
     <local:ProfilePage Title="My Profile"
-                IconImageSource="{OnPlatform 'icon_profile.svg'}">
+                IconImageSource="{AppThemeBinding Light='dark_icon_profile.svg', Dark='light_icon_profile.svg'}">
     </local:ProfilePage>
 
     <local:MapPage Title="Connections"
-                IconImageSource="{OnPlatform 'icon_map.svg'}">
+                IconImageSource="{AppThemeBinding Light='dark_icon_map.svg', Dark='light_icon_map.svg'}">
     </local:MapPage>
 
     <local:QRGenPage Title="Local Share"
-                IconImageSource="{OnPlatform 'icon_qr.svg'}">
+                IconImageSource="{AppThemeBinding Light='dark_icon_qr.svg', Dark='light_icon_qr.svg'}">
     </local:QRGenPage>
 
 </TabbedPage>

@@ -7,7 +7,7 @@
              Title="Live Map">
     
     <ContentPage.ToolbarItems>
-        <ToolbarItem IconImageSource="icon_account.svg" Clicked="OnConnectionsClicked"/>
+        <ToolbarItem IconImageSource="{AppThemeBinding Light='dark_icon_account.svg', Dark='light_icon_account.svg'}" Clicked="OnConnectionsClicked"/>
     </ContentPage.ToolbarItems>
     
     <maps:Map x:Name="map" IsShowingUser="true"/>
