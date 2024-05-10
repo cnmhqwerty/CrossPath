@@ -58,6 +58,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Fonts\Anybody-Regular.ttf" />
+	  <None Remove="Resources\Fonts\Anybody-SemiBold.ttf" />
 	  <None Remove="Resources\Images\dark_icon_account.svg" />
 	  <None Remove="Resources\Images\dark_icon_profile.svg" />
 	  <None Remove="Resources\Images\profile_picture.svg" />
